@@ -1,5 +1,8 @@
 extends Control
 
+@onready var back = $MarginContainer/HBoxContainer/VBoxContainer/Back
+@onready var main_menu = preload("res://scenes/Menu/main_menu.tscn") as PackedScene
+
 var music_bus = AudioServer.get_bus_index("Music")
 var master_bus = AudioServer.get_bus_index("Master")
 
@@ -24,3 +27,7 @@ func _on_check_box_toggled(toggled_on):
 		# Restore previous volumes
 		AudioServer.set_bus_volume_db(master_bus, previous_master_volume)
 		AudioServer.set_bus_volume_db(music_bus, previous_music_volume)
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_packed(main_menu)
