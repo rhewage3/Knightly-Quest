@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7hd1otjhsxil"]
+
+[ext_resource type="FontFile" uid="uid://pattneh8lhsf" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_yka8v"]
+
+[node name="HUB" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("1_yka8v")
+theme_override_font_sizes/font_size = 32
+text = "Score : 0"

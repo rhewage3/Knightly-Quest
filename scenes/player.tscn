@@ -1,7 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://djhlwyrpij0wy"]
+[gd_scene load_steps=27 format=3 uid="uid://djhlwyrpij0wy"]
 
 [ext_resource type="Texture2D" uid="uid://do1amsqtcjuyu" path="res://assets/sprites/knight.png" id="1_3j058"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jrieu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5et0"]
+atlas = ExtResource("1_3j058")
+region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mr673"]
 atlas = ExtResource("1_3j058")
@@ -91,6 +95,14 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h5et0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_mr673")
 }, {
 "duration": 1.0,
@@ -171,7 +183,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_od4b6"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_jrieu")
@@ -179,9 +191,8 @@ script = ExtResource("1_jrieu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -12)
 sprite_frames = SubResource("SpriteFrames_gxiuk")
-animation = &"run"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.0601665
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -5)

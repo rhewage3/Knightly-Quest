@@ -1,9 +1,14 @@
 extends Node
 
+@onready var hub = $HUB
+@onready var score_label = hub.get_node("ScoreLabel")
 
-var score = 0
-@onready var score_label = $ScoreLabel
+func _ready():
+	update_score()
 
 func add_points():
-	score += 1
-	score_label.text= "You collected " + str(score) + " coins."
+	GameData.score += 1
+	update_score()
+
+func update_score():
+	score_label.text = "Score: " + str(GameData.score)
