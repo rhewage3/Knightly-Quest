@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d341ifkbads0l"]
+[gd_scene load_steps=4 format=3 uid="uid://6jpq75kpd2xn"]
 
-[ext_resource type="Texture2D" uid="uid://eyt82ommxp7x" path="res://assets/background/Background.jpg" id="1_0a1g1"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_dhwtd"]
-[ext_resource type="FontFile" uid="uid://pattneh8lhsf" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_wikr2"]
+[ext_resource type="Script" path="res://scenes/Menu/option_menu.gd" id="1_h6enh"]
+[ext_resource type="Texture2D" uid="uid://eyt82ommxp7x" path="res://assets/background/Background.jpg" id="2_40x84"]
+[ext_resource type="FontFile" uid="uid://pattneh8lhsf" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_hj3dt"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dhwtd")
+script = ExtResource("1_h6enh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +24,7 @@ offset_top = -230.0
 offset_right = 1919.0
 offset_bottom = 203.0
 grow_vertical = 2
-texture = ExtResource("1_0a1g1")
+texture = ExtResource("2_40x84")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -53,9 +53,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_constants/shadow_offset_y = 8
 theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("2_wikr2")
+theme_override_fonts/font = ExtResource("3_hj3dt")
 theme_override_font_sizes/font_size = 48
-text = "Knightly Adventure"
+text = "Select Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -77,33 +77,27 @@ layout_mode = 2
 [node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="level_1" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wikr2")
+theme_override_fonts/font = ExtResource("3_hj3dt")
 theme_override_font_sizes/font_size = 32
-text = "Start Game"
+text = "Level 1 "
 
-[node name="Levels_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="level_2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wikr2")
+theme_override_fonts/font = ExtResource("3_hj3dt")
 theme_override_font_sizes/font_size = 32
-text = "Select Level"
+text = "Level 2"
 
-[node name="Options_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wikr2")
+theme_override_fonts/font = ExtResource("3_hj3dt")
 theme_override_font_sizes/font_size = 32
-text = "Options"
+text = "Back"
 
-[node name="Exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wikr2")
-theme_override_font_sizes/font_size = 32
-text = "Exit"
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/level_2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/back" to="." method="_on_level_2_pressed"]
