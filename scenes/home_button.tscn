@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ioe6821yg3j4"]
+
+[ext_resource type="Script" path="res://scripts/home_button.gd" id="1_0di45"]
+[ext_resource type="FontFile" uid="uid://pattneh8lhsf" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0li88"]
+
+[node name="Home Button" type="CanvasLayer"]
+script = ExtResource("1_0di45")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0li88")
+theme_override_font_sizes/font_size = 24
+text = "HOME"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
